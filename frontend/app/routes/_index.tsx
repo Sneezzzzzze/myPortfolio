@@ -2,54 +2,89 @@ import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Junbeom" },
+    { name: "description", content: "This is Junbeom aka. Laughing_egg Portfolio Page" },
   ];
 };
 
 export default function Index() {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="flex flex-col items-center gap-16">
-        <header className="flex flex-col items-center gap-9">
-          <h1 className="leading text-2xl font-bold text-gray-800 dark:text-gray-100">
-            Welcome to <span className="sr-only">Remix</span>
-          </h1>
-          <div className="h-[144px] w-[434px]">
-            <img
-              src="/logo-light.png"
-              alt="Remix"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src="/logo-dark.png"
-              alt="Remix"
-              className="hidden w-full dark:block"
-            />
+      <>
+        <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+            <div className="flex items-center justify-between">
+              <div className="text-xl sm:text-2xl font-bold text-gradient ">Portfolio</div>
+              <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+                <a href="#about" className="text-gray-600 hover:text-primary transition-colors">About</a>
+                <a href="#projects" className="text-gray-600 hover:text-primary transition-colors">Projects</a>
+                <a href="#skills" className="text-gray-600 hover:text-primary transition-colors">Skills</a>
+                <a href="#contact" className="text-gray-600 hover:text-primary transition-colors">Contact</a>
+              </div>
+              <button id="mobile-menu-btn" className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div id="mobile-menu" className="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
+              <div className="flex flex-col space-y-2 pt-4">
+                <a href="#about"
+                   className="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md transition-colors">About</a>
+                <a href="#projects"
+                   className="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md transition-colors">Projects</a>
+                <a href="#skills"
+                   className="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md transition-colors">Skills</a>
+                <a href="#contact"
+                   className="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md transition-colors">Contact</a>
+              </div>
+            </div>
           </div>
-        </header>
-        <nav className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-gray-200 p-6 dark:border-gray-700">
-          <p className="leading-6 text-gray-700 dark:text-gray-200">
-            What&apos;s next?
-          </p>
-          <ul>
-            {resources.map(({ href, text, icon }) => (
-              <li key={href}>
-                <a
-                  className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {icon}
-                  {text}
-                </a>
-              </li>
-            ))}
-          </ul>
         </nav>
-      </div>
-    </div>
+        <div className="flex h-screen items-center justify-center">
+          <div className="flex flex-col items-center gap-16">
+            <header className="flex flex-col items-center gap-9">
+              <h1 className="leading text-2xl font-bold accent-primary dark:accent-primary">
+                Welcome to GAY <span className="sr-only">Junbeom</span>
+              </h1>
+              <div className="h-[144px] w-[434px]">
+                <img
+                    src="/logo-light.png"
+                    alt="Remix"
+                    className="block w-full dark:hidden"
+                />
+                <img
+                    src="/logo-dark.png"
+                    alt="Remix"
+                    className="hidden w-full dark:block"
+                />
+              </div>
+            </header>
+            <nav
+                className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-gray-200 p-6 dark:border-gray-700">
+              {/*<p className="leading-6 text-gray-700 dark:text-gray-200">*/}
+              {/*  What&apos;s next?,,,,,,,*/}
+              {/*</p>*/}
+              <ul>
+                {/*{resources.map(({ href, text, icon }) => (*/}
+                {/*  <li key={href}>*/}
+                {/*    <a*/}
+                {/*      className="group flex items-center gap-3 self-stretch p-3 leading-normal accent-primary hover:underline dark:accent-primary"*/}
+                {/*      href={href}*/}
+                {/*      target="_blank"*/}
+                {/*      rel="noreferrer"*/}
+                {/*    >*/}
+                {/*      {icon}*/}
+                {/*      {text}*/}
+                {/*    </a>*/}
+                {/*  </li>*/}
+                {/*))}*/}
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </>
   );
 }
 
@@ -58,13 +93,13 @@ const resources = [
     href: "https://remix.run/start/quickstart",
     text: "Quick Start (5 min)",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
       >
         <path
           d="M8.51851 12.0741L7.92592 18L15.6296 9.7037L11.4815 7.33333L12.0741 2L4.37036 10.2963L8.51851 12.0741Z"
